@@ -1,0 +1,39 @@
+<!-- templates/chatbot.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chatbot-box">
+            <h2>Personalized Workout and Meal Plan</h2>
+            <form method="POST">
+                <label for="time_of_day">Select Time of Day:</label>
+                <select name="time_of_day">
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                </select>
+                <button type="submit">Get Recommendation</button>
+            </form>
+
+            {% if workout %}
+                <div class="recommendation">
+                    <p><strong>Workout Recommendation:</strong> {{ workout }}</p>
+                    <p><strong>Meal Recommendation:</strong> {{ meal }}</p>
+                </div>
+                <form method="post" action="{{ url_for('book_plan') }}">
+                    <input type="hidden" name="time_of_day" value="{{ time_of_day }}">
+                    <input type="hidden" name="workout" value="{{ workout }}">
+                    <input type="hidden" name="meal" value="{{ meal }}">
+                    <button type="submit">Book this Plan</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

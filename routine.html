@@ -1,0 +1,27 @@
+<!-- templates/routine.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Routine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="routine-box">
+            <h2>My Booked Routine</h2>
+            {% if routines %}
+                <ul>
+                    {% for routine in routines %}
+                        <li><strong>{{ routine.time_of_day.capitalize() }}:</strong> Workout - {{ routine.workout_plan }}, Meal - {{ routine.meal_plan }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No routine booked yet. Visit the chatbot page to get a recommendation.</p>
+            {% endif %}
+            <a href="{{ url_for('dashboard') }}" class="button">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+/* Reset and Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.main {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url(b0.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.navbar {
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out logo, menu, and action items */
+}
+
+.icon {
+    width: 200px;
+}
+
+.logo {
+    color: #ff7200;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+    gap: 50px; /* Increased space between each menu item */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px; /* Increased font size */
+    transition: 0.4s ease-in-out;
+}
+
+.menu ul li a:hover {
+    color: #ff7200;
+}
+
+/* Action Items */
+.action-items {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between button and welcome text */
+}
+
+.calorie-finder .btn {
+    width: 150px;
+    height: 40px;
+    background: #ff7200;
+    border: 2px solid #ff7200;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.calorie-finder .btn:hover {
+    color: #000;
+}
+
+/* User Display Styling */
+.user-display {
+    color: #fff;
+    font-size: 24px; /* Increased font size for welcome message */
+    font-family: 'Pacifico', cursive;
+    margin-top: 10px; /* Adds slight space between the navbar and welcome message */
+    text-align: center;
+}
+
+/* Content Styling */
+.content {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: #fff;
+    position: relative;
+}
+
+.content .par {
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.content h1 {
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 20px;
+    margin-top: 9%;
+    letter-spacing: 2px;
+}
+
+.content .cn {
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.content .cn a {
+    text-decoration: none;
+    color: #000;
+    transition: .3s ease;
+}
+
+.cn:hover {
+    background-color: #fff;
+}
+
+.content span {
+    color: #ff7200;
+    font-size: 65px;
+}
+
+/* Plan Grid */
+.plan-grid {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+    position: absolute;
+    top: -20px;
+    left: 870px;
+    transform: translate(0%, -5%);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.plan-box {
+    position: relative;
+    text-align: center;
+    background-color: #333;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    color: #ff7200;
+    transition: transform 0.3s;
+}
+
+.plan-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.plan-box-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 8px 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+}

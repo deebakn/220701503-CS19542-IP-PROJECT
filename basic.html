@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WELLIFY</title>
+    <link rel="stylesheet" href="basic.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Wellify</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#" onclick="showAboutIdea()">IDEA</a></li>
+                    <li><a href="#" onclick="showAboutAlert()">ABOUT</a></li>
+                    <li><a href="#" onclick="showContactAlert()">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <!-- Calorie Finder and Welcome Username -->
+            <div class="action-items">
+                <div class="calorie-finder">
+                    <button onclick="redirectToCalorieCalculator()" class="btn">Calorie Finder</button>
+                </div>
+                <div id="user-display" class="user-display"></div> <!-- User display area -->
+            </div>
+        </div> 
+
+        <div class="content">
+            <h1>AI-Powered Diet &<br><span>Lifestyle</span> <br>Guide</h1>
+            <p class="par">AI Diet Companion is an intelligent wellness platform that provides personalized meal <br>and workout plans tailored to your goals.<br> Powered by advanced AI, it adapts to your lifestyle,<br> offering real-time adjustments and progress tracking.
+                <br> Achieve a healthier, balanced life with insights designed specifically for you.</p>
+
+            <button class="cn"><a href="login.html">LOG IN</a></button>
+            <button class="cn"><a href="recipe.html">RECIPE FINDER</a></button> <!-- Updated Recipe Finder button -->
+
+            <!-- 2x2 Plan Grid -->
+            <div class="plan-grid">
+                <!-- Morning Plan box with link to morning_plan.html -->
+                <div class="plan-box" onclick="redirectToMorningPlan()">
+                    <img src="morning.jpg" alt="Morning Plan">
+                    <div class="plan-box-footer">Morning Plan</div>
+                </div>
+                <div class="plan-box">
+                    <img src="lunch.jpg" alt="Afternoon Plan">
+                    <div class="plan-box-footer">Afternoon Plan</div>
+                </div>
+                <div class="plan-box">
+                    <img src="eve.jpg" alt="Evening Plan">
+                    <div class="plan-box-footer">Evening Plan</div>
+                </div>
+                <div class="plan-box">
+                    <img src="dinner.jpg" alt="Night Plan">
+                    <div class="plan-box-footer">Night Plan</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+    <script>
+        // Redirects to calorie_calculator.html
+        function redirectToCalorieCalculator() {
+            window.location.href = "calorie_calculator.html"; // Redirect to the calorie calculator page
+        }
+
+        // Redirects to morning_plan.html
+        function redirectToMorningPlan() {
+            window.location.href = "morning_plan.html"; // Redirect to the morning plan page
+        }
+
+        // Display the username if available in sessionStorage
+        window.onload = function() {
+            const username = sessionStorage.getItem('userName');
+            if (username) {
+                document.getElementById('user-display').innerText = `Welcome, ${username}`;
+            }
+        };
+
+        function showContactAlert() {
+            alert("CONTACT: MOHNISH - 220701171.");
+        }
+
+        function showAboutIdea() {
+            confirm("Wellify is an AI-powered platform that offers personalized diet and workout plans. Our goal is to help you achieve a healthier, balanced lifestyle through tailored insights.");
+        }
+
+        function showAboutAlert() {
+            confirm("WELLIFY - YOUR AI COMPANION\nHelping you achieve a balanced and healthier lifestyle through tailored AI insights.");
+        }
+    </script>
+</body>
+</html>

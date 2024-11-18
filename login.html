@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <title>AI DIET - YOUR COMPANION</title>
+</head>
+<body>
+    <div class="login">
+        <img src="b1.jpeg" alt="registration image" class="login__img">
+        
+        <form action="" class="login__form" onsubmit="saveUserName(event)">
+            <h1 class="login__title">Register</h1>
+            
+            <div class="login__content">
+                <!-- Name Field -->
+                <div class="login__box">
+                    <i class="ri-user-3-line login__icon"></i>
+                    <div class="login__box-input">
+                        <input type="text" required class="login__input" id="user-name" placeholder=" ">
+                        <label for="user-name" class="login__label">Name</label>
+                    </div>
+                </div>
+                
+                <!-- Age Field -->
+                <div class="login__box">
+                    <i class="ri-calendar-line login__icon"></i>
+                    <div class="login__box-input">
+                        <input type="number" required class="login__input" id="user-age" placeholder=" ">
+                        <label for="user-age" class="login__label">Age</label>
+                    </div>
+                </div>
+
+                <!-- Weight Field -->
+                <div class="login__box">
+                    <i class="ri-scale-line login__icon"></i>
+                    <div class="login__box-input">
+                        <input type="number" required class="login__input" id="user-weight" placeholder=" ">
+                        <label for="user-weight" class="login__label">Weight (kg)</label>
+                    </div>
+                </div>
+
+                <!-- Height Field -->
+                <div class="login__box">
+                    <i class="ri-ruler-line login__icon"></i>
+                    <div class="login__box-input">
+                        <input type="number" required class="login__input" id="user-height" placeholder=" ">
+                        <label for="user-height" class="login__label">Height (cm)</label>
+                    </div>
+                </div>
+
+                <!-- Date of Birth Field -->
+                <div class="login__box">
+                    <i class="ri-calendar-event-line login__icon"></i>
+                    <div class="login__box-input">
+                        <input type="date" required class="login__input" id="user-dob" placeholder=" ">
+                        <label for="user-dob" class="login__label">Date of Birth</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="login__button">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function saveUserName(event) {
+            event.preventDefault(); // Prevents form from submitting in the traditional way
+            const userName = document.getElementById("user-name").value;
+            sessionStorage.setItem("userName", userName); // Save the user's name to sessionStorage
+
+            window.location.href = "basic.html"; // Redirect to basic.html after registration
+        }
+    </script>
+</body>
+</html>

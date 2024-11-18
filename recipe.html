@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Recommendation System</title>
+    <link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recipe Recommendation System</h1>
+        <p>Find similar recipes based on your preferences!</p>
+
+        <!-- Input Form -->
+        <div class="form-container">
+            <label for="recipe-name">Enter Your Recipe:</label>
+            <input type="text" id="recipe-name" placeholder="e.g., Veg Salad">
+            <button onclick="getRecommendations()">Find Recipes</button>
+        </div>
+
+        <!-- Recommendation Display -->
+        <div id="recommendations" class="recommendations">
+            <!-- Recommendations will appear here after entering a recipe -->
+        </div>
+    </div>
+
+    <script>
+        // Placeholder function for fetching recommendations from backend
+        function getRecommendations() {
+            const recipeName = document.getElementById("recipe-name").value;
+            const recommendations = document.getElementById("recommendations");
+
+            // Clear previous results
+            recommendations.innerHTML = `<h2>Recommended Recipes for "${recipeName}"</h2>`;
+
+            // Make a call to your ML backend here and display results dynamically
+            // e.g., fetch('/api/recommendations?recipe=' + recipeName).then(...)
+        }
+    </script>
+</body>
+</html>
